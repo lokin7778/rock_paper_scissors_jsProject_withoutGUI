@@ -51,3 +51,20 @@ function getHumanChoice(){
 
 let userScore = 0;
 let compScore = 0;
+
+// function to play a single round and then increment the player or the computer's score by one if they win.
+/**
+ * @param - getCompChoice() and getHumanChoice()
+ * @returns - none
+ */
+
+function playRound(compChoice, humanChoice){
+
+    
+}
+
+// assigns the choices to their respective variables
+let compChoice = getComputerChoice();
+let humanChoice = getHumanChoice();
+
+playRound(compChoice,humanChoice);
