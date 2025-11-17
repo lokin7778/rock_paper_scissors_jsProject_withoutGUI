@@ -44,6 +44,10 @@ function getHumanChoice(){
 
     let userChoice = String(prompt("Enter a valid choice (either Rock, Paper or Scissor): "));
 
-
+    return userChoice;
 }
 
+// create variables to keep a track of the human's score and the computer's score
+
+let userScore = 0;
+let compScore = 0;
