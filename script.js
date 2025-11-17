@@ -52,22 +52,6 @@ function getHumanChoice(){
 let userScore = 0;
 let compScore = 0;
 
-
-
-// creates a function playGame() that calls playRound() 5 times, keep track of the score and then declare the winner in the end.
-/**
- * @param - none
- * @returns - none
- */
-
-function playGame(){
-
-    // function to play a single round and then increment the player or the computer's score by one if they win.
-    /**
-     * @param - getCompChoice() and getHumanChoice()
-     * @returns - none
-     */
-
     function playRound(compChoice, humanChoice){
 
         // converts the given paramters to lowercase for the method to work case insensitively
@@ -89,19 +73,39 @@ function playGame(){
         }
     }
 
-    // assigns the choices to their respective variables
-    let compChoice = getComputerChoice();
-    let humanChoice = getHumanChoice();
 
-    playRound(compChoice,humanChoice);
-    playRound(compChoice,humanChoice);
-    playRound(compChoice,humanChoice);
-    playRound(compChoice,humanChoice);
-    playRound(compChoice,humanChoice);
 
+// creates a function playGame() that calls playRound() 5 times, keep track of the score and then declare the winner in the end.
+/**
+ * @param - none
+ * @returns - none
+ */
+
+function playGame(){
+
+    // function to play a single round and then increment the player or the computer's score by one if they win.
+    /**
+     * @param - getCompChoice() and getHumanChoice()
+     * @returns - none
+     */
+
+
+
+    // for-loop to iterate 5 times and call the function 5 times
+
+    for (let i = 0; i<5; i++){
+
+        // assings the variable names to the respective functions
+        let compChoice = getComputerChoice();
+        let humanChoice = getHumanChoice();
+
+        // calling the playRound() method
+        playRound(compChoice,humanChoice);
+    }
+
+    // print the user Score as well as Computer Score
     console.log(userScore);
     console.log(compScore);
 }
 
 playGame();
-
