@@ -34,4 +34,16 @@ function getComputerChoice(){
     return compChoice; // returns the variable compChoice
 }
 
-console.log(getComputerChoice());
+// create a function named getHumanChoice
+/**
+ * @param - none
+ * @returns - choice of either rock, paper or scissor
+ */
+
+function getHumanChoice(){
+
+    let userChoice = String(prompt("Enter a valid choice (either Rock, Paper or Scissor): "));
+
+
+}
+
