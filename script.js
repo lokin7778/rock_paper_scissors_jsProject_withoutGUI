@@ -60,7 +60,23 @@ let compScore = 0;
 
 function playRound(compChoice, humanChoice){
 
-    
+    // converts the given paramters to lowercase for the method to work case insensitively
+    let localCompChoice = compChoice.toLowerCase();
+    let localHumanChoice = humanChoice.toLowerCase();
+
+    // if-else statment with a bunch of conditions if either of the conditions pass
+    if ((localCompChoice==="rock" && localHumanChoice==="scissors") || (localCompChoice==="paper" && localHumanChoice==="rock") || (localCompChoice==="scissors" && localHumanChoice==="paper")){
+
+        console.log("You lose! " + localCompChoice + " beats " + localHumanChoice);
+
+        compScore += 1; // increments the computer's score
+    }
+
+    else {
+        console.log("Congratulations! You win! " + localHumanChoice + " beats " + localCompChoice);
+
+        userScore += 1; // increments the user's score
+    }
 }
 
 // assigns the choices to their respective variables
