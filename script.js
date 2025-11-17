@@ -104,8 +104,15 @@ function playGame(){
     }
 
     // print the user Score as well as Computer Score
-    console.log(userScore);
-    console.log(compScore);
+    console.log("Your score is: " + userScore);
+    console.log("Computer's Score is: " + compScore);
+
+    if (userScore>compScore){
+        console.log("Congratulations! You win!")
+    }
+    else{
+        console.log("Better luck next time!")
+    }
 }
 
 playGame();
