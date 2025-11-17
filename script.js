@@ -52,35 +52,56 @@ function getHumanChoice(){
 let userScore = 0;
 let compScore = 0;
 
-// function to play a single round and then increment the player or the computer's score by one if they win.
+
+
+// creates a function playGame() that calls playRound() 5 times, keep track of the score and then declare the winner in the end.
 /**
- * @param - getCompChoice() and getHumanChoice()
+ * @param - none
  * @returns - none
  */
 
-function playRound(compChoice, humanChoice){
+function playGame(){
 
-    // converts the given paramters to lowercase for the method to work case insensitively
-    let localCompChoice = compChoice.toLowerCase();
-    let localHumanChoice = humanChoice.toLowerCase();
+    // function to play a single round and then increment the player or the computer's score by one if they win.
+    /**
+     * @param - getCompChoice() and getHumanChoice()
+     * @returns - none
+     */
 
-    // if-else statment with a bunch of conditions if either of the conditions pass
-    if ((localCompChoice==="rock" && localHumanChoice==="scissors") || (localCompChoice==="paper" && localHumanChoice==="rock") || (localCompChoice==="scissors" && localHumanChoice==="paper")){
+    function playRound(compChoice, humanChoice){
 
-        console.log("You lose! " + localCompChoice + " beats " + localHumanChoice);
+        // converts the given paramters to lowercase for the method to work case insensitively
+        let localCompChoice = compChoice.toLowerCase();
+        let localHumanChoice = humanChoice.toLowerCase();
 
-        compScore += 1; // increments the computer's score
+        // if-else statment with a bunch of conditions if either of the conditions pass
+        if ((localCompChoice==="rock" && localHumanChoice==="scissors") || (localCompChoice==="paper" && localHumanChoice==="rock") || (localCompChoice==="scissors" && localHumanChoice==="paper")){
+
+            console.log("You lose! " + localCompChoice + " beats " + localHumanChoice);
+
+            compScore += 1; // increments the computer's score
+        }
+
+        else {
+            console.log("Congratulations! You win! " + localHumanChoice + " beats " + localCompChoice);
+
+            userScore += 1; // increments the user's score
+        }
     }
 
-    else {
-        console.log("Congratulations! You win! " + localHumanChoice + " beats " + localCompChoice);
+    // assigns the choices to their respective variables
+    let compChoice = getComputerChoice();
+    let humanChoice = getHumanChoice();
 
-        userScore += 1; // increments the user's score
-    }
+    playRound(compChoice,humanChoice);
+    playRound(compChoice,humanChoice);
+    playRound(compChoice,humanChoice);
+    playRound(compChoice,humanChoice);
+    playRound(compChoice,humanChoice);
+
+    console.log(userScore);
+    console.log(compScore);
 }
 
-// assigns the choices to their respective variables
-let compChoice = getComputerChoice();
-let humanChoice = getHumanChoice();
+playGame();
 
-playRound(compChoice,humanChoice);
